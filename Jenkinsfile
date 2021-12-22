@@ -4,6 +4,9 @@ node {
     stage('checkout') {
         checkout scm
     }
+     tools {
+        gradle "Gradle-7.2"
+    }
 
    
          
@@ -13,28 +16,6 @@ node {
             stage('check gradle version') {
                 sh "gradle --version"
             }
-
-
-
- stage('somestage') {
-            steps {
-                script {
-                    def version = sh (
-                        script: "./gradlew properties -q | grep \"version:\" | awk '{print \$2}'",
-                        returnStdout: true
-                    ).trim()
-                    sh "echo Building project in version: $version"
-
-                }
-            }
-        }
-
-
-
-
-
-
-
             
 
 
