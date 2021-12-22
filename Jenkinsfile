@@ -9,6 +9,7 @@ pipeline {
     stage('checkout') {
         checkout scm
     }
+    stages{
      
 
    
@@ -75,5 +76,6 @@ pipeline {
             // https://github.com/GoogleContainerTools/jib/tree/master/jib-gradle-plugin#authentication-methods
             sh "./gradlew bootJar jib -Pprod -PnodeInstall --no-daemon"
         }
+    }
     
 }
