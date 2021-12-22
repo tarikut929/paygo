@@ -10,6 +10,33 @@ node {
             stage('check java') {
                 sh "java -version"
             }
+            stage('check gradle version') {
+                sh "gradle --version"
+            }
+
+
+
+ stage('somestage') {
+            steps {
+                script {
+                    def version = sh (
+                        script: "./gradlew properties -q | grep \"version:\" | awk '{print \$2}'",
+                        returnStdout: true
+                    ).trim()
+                    sh "echo Building project in version: $version"
+
+                }
+            }
+        }
+
+
+
+
+
+
+
+            
+
 
             stage('clean') {
                 sh "chmod +x gradlew"
