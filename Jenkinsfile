@@ -6,7 +6,7 @@ node {
     }
 
     gitlabCommitStatus('build') {
-        docker.image('jhipster/jhipster:v7.3.1').inside('-u jhipster -e GRADLE_USER_HOME=.gradle') {
+         {
             stage('check java') {
                 sh "java -version"
             }
