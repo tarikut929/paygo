@@ -1,12 +1,15 @@
 #!/usr/bin/env groovy
 
-node {
+pipeline {
+
+   agent any
+
+    tools {gradle "Gradle-7.2"}
+
     stage('checkout') {
         checkout scm
     }
-     tools {
-        gradle "Gradle-7.2"
-    }
+     
 
    
          
