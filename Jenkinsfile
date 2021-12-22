@@ -4,7 +4,7 @@ pipeline {
 
    agent any
 
-    tools {gradle "Gradle-7.2"}
+  tools {nodejs "node"}
 
     stage('checkout') {
         checkout scm
