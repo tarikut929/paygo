@@ -5,7 +5,7 @@ node {
         checkout scm
     }
 
-    gitlabCommitStatus('build') {
+   
          
             stage('check java') {
                 sh "java -version"
@@ -64,5 +64,5 @@ node {
             // https://github.com/GoogleContainerTools/jib/tree/master/jib-gradle-plugin#authentication-methods
             sh "./gradlew bootJar jib -Pprod -PnodeInstall --no-daemon"
         }
-    }
+    
 }
