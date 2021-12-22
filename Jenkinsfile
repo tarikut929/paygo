@@ -6,7 +6,7 @@ node {
     }
 
     gitlabCommitStatus('build') {
-         {
+         
             stage('check java') {
                 sh "java -version"
             }
@@ -56,7 +56,7 @@ node {
                     sh "./gradlew sonarqube --no-daemon"
                 }
             }
-        }
+        
 
         def dockerImage
         stage('publish docker') {
